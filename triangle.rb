@@ -14,6 +14,14 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  if a >= b + c || b >= a + c || c >= a + b
+    raise TriangleError, "Incorrect Side Lengths"
+  end
+
+  if a == 0 || b == 0 || c == 0
+    raise TriangleError, "Sides must be longer than 0"
+  end
+
   if a != b && b != c && a != c  
     return :scalene
   elsif a == b && b == c
